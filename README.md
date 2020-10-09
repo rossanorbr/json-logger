@@ -7,7 +7,7 @@ How to use(docker):
 $ docker push rossanorbr/json-logger:v1
 $ docker run -d rossanorbr/json-logger:v1
 ```
-It will generate outputs in json format, its defined inside [entrypoint.sh](https://github.com/rossanorbr/json-logger/entrypoint.sh):
+It will generate outputs in json format, its defined inside [entrypoint.sh](https://github.com/rossanorbr/json-logger/blob/master/entrypoint.sh):
 ```sh
 {"@timestamp": "2020-10-09T07:22:44+0000", "kubernetes.json.level": "DEBUG", "kubernetes.json.status": "404", "kubernetes.json.logger": "jsonLogger", "kubernetes.json.context": "default", "kubernetes.json.message": "request not found."}
 
@@ -15,7 +15,7 @@ It will generate outputs in json format, its defined inside [entrypoint.sh](http
 
 {"@timestamp": "2020-10-09T07:27:14+0000", "kubernetes.json.level": "ERROR", "kubernetes.json.status": "500", "kubernetes.json.logger": "jsonLogger", "kubernetes.json.context": "default", "kubernetes.json.message": "something happened in this execution."}
 ```
-If you want to change the logs output just change the [entrypoint.sh](https://github.com/rossanorbr/json-logger/entrypoint.sh) file:
+If you want to change the logs output just change the [entrypoint.sh](https://github.com/rossanorbr/json-logger/blob/master/entrypoint.sh) file:
 ```sh
 $ git clone git@github.com:rossanorbr/json-logger.git
 $ cd json-logger/
@@ -45,6 +45,6 @@ done
 Kubernetes use case:
 
 ```sh
-$ kubectl apply -f https://github.com/rossanorbr/json-logger/entrypoint.sh/logger.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/rossanorbr/json-logger/master/logger.yaml
 ```
 
