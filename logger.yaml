@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logger-test 
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: logger-test
+  template:
+    metadata:
+      labels:
+        app: logger-test
+    spec:
+      containers:
+      - name: logger-test 
+        image: rossanorbr/json-logger:v1
+        imagePullPolicy: Always
